@@ -11,6 +11,7 @@
 		<input type="text" name = 'login'>
 		<label for="password">Пароль:</label>
 		<input type="text" name = "password">
+		<input type="submit">
 	</form>
 </body>
 </html>
