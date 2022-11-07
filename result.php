@@ -10,6 +10,8 @@ $result = require __DIR__.'/calc.php';
 	<title>Page result calculate</title>
 </head>
 <body>
-<? "Результат вычислений $result"; ?>	
+	<b>Результат вычислений:</b>
+	<br/>
+<?=$result?>	
 </body>
 </html>

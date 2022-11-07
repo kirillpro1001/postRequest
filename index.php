@@ -6,11 +6,13 @@
 	<title>Calculator</title>
 </head>
 <body>
-	<form action="result.php" method = 'post'>
+	<form action="result.php" method = 'get'>
 		<input type="text" name = 'numberOne'>
 		<select name="action">
 			<option value="+">+</option>
 			<option value="-">-</option>
+			<option value="*">*</option>
+			<option value="/">/</option>
 		</select>
 		<input type="text" name="numberTwo">
 		<input type="submit">
