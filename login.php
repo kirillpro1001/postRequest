@@ -2,11 +2,14 @@
 $login = !empty($_POST['login']) ? $_POST['login'] : 'Логин не передан';
 $password = !empty($_POST['password']) ? $_POST['password'] : 'Пароль не передан';
 
-if ($login === 'admin' && $password === 'admin') {
-	$isAuthorized = true;
+if ($login !== 'admin') {
+	$isAuthorized = "Такого пользователя не существует";
+}
+elseif ($login === 'admin' && $password !== 'admin') {
+	$isAuthorized = "Введен неверный пароль";
 }
 else {
-	$isAuthorized = false;
+	$isAuthorized = "Авторизация прошла успешно";
 }
 ?>
 
@@ -18,6 +21,6 @@ else {
 	<title>Result authorization</title>
 </head>
 <body>
-	<?=$isAuthorized ? 'Регистрация прошла успешно' : 'Ошибка авторизации' ?>
+	<?=$isAuthorized ?>
 </body>
 </html>
