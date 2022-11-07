@@ -1,18 +1,20 @@
 <?php
-	$numberOne = $_GET['numberOne'];
-	$numberTwo = $_GET['numberTwo'];
-	$action = $_GET['action'];
+	$numberOne = $_GET['numberOne'] ?? null;
+	$numberTwo = $_GET['numberTwo'] ?? null;
+	$action = $_GET['action'] ?? null;
 	$arrNumberOne = str_split($numberOne,1);
 	$arrNumberTwo = str_split($numberTwo,1);
+	$numberOne = filter_input(INPUT_GET,'numberOne', FILTER_VALIDATE_FLOAT);
+	$numberTwo = filter_input(INPUT_GET,'numberTwo', FILTER_VALIDATE_FLOAT);
 
 
 	if (!isset($_GET)) {
 		return "Значения не переданы";
 	}
-	if (!isset($_GET['action'])) {
+	if ($action === null) {
 		return "Не передана операция";
 	}
-	if (!isset($numberOne) || !isset($numberTwo)) {
+	if ($numberOne === null || $numberTwo === null) {
 		return "Не переданы аргументы";
 	}
 	if ($arrNumberOne[0] == " " || $arrNumberTwo[0] == " ") {
